@@ -33,12 +33,11 @@ fccTestingRoutes(app);
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'", 'hyperdev.com', 'glitch.com'],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-      scriptSrc: ['code.jquery.com', "'unsafe-inline'"],
-      fontSrc: ["'self'", 'data:', 'fonts.gstatic.com', 'fonts.googleapis.com'],
-    },
-  }),
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'"],
+      scriptSrc: ["'self'"]
+    }
+  })
 );
 // Routing for API
 apiRoutes(app);
