@@ -31,11 +31,12 @@ app.route('/')
 fccTestingRoutes(app);
 
 app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      styleSrc: ["'self'"],
-      scriptSrc: ["'self'"]
+  helmet({
+    csp: {
+      directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'", "cdnjs.cloudflare.com"]
+      }
     }
   })
 );
